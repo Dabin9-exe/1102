@@ -8,10 +8,10 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    tcpfilesender.cpp
+    tcpfileserver.cpp
 
 HEADERS += \
-    tcpfilesender.h
+    tcpfileserver.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
