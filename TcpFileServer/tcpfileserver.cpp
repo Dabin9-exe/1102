@@ -46,7 +46,10 @@ void TcpFileServer::start()
 }
 void TcpFileServer::acceptConnection()
 {
-
+    tcpServerConnection = tcpServer.nextPendingConnection();
+    connect(tcpServerConnection,SIGNAL(readyRead()),this,SLOT(updateServerProgress()));
+    serverStatusLabel->setText("接受連線");
+    tcpServer.close();
 }
 void TcpFileServer::updateServerProgress()
 {
